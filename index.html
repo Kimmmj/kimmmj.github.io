@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOONJOO Kim — Product Designer</title>
+<meta name="description" content="MOONJOO Kim, Product Designer 이력서">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<style>
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardVariable.woff2') format('woff2-variations');
+    font-weight: 45 920;
+  }
+
+  :root{
+    --ink: #17181c;
+    --sub: #56585f;
+    --faint: #8b8d94;
+    --line: #e7e7ea;
+    --bg: #ffffff;
+    --accent: #1f5eff;
+    --tag-bg: #f4f5f7;
+    --good: #0f7a3d;
+    --max-w: 760px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.011em;
+  }
+
+  .wrap{
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 96px 24px 120px;
+  }
+
+  /* Header */
+  header.hero{
+    margin-bottom: 64px;
+  }
+  header.hero h1{
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  header.hero .role{
+    font-size: 18px;
+    color: var(--sub);
+    font-weight: 500;
+    margin: 0 0 20px;
+  }
+  .contact-row{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    font-size: 14px;
+    color: var(--sub);
+  }
+  .contact-row a{
+    color: var(--sub);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: color .15s, border-color .15s;
+  }
+  .contact-row a:hover{
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* Section headings */
+  section{ margin-bottom: 56px; }
+  section h2{
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin: 0 0 20px;
+  }
+
+  /* Summary */
+  .summary p{
+    font-size: 16px;
+    color: var(--ink);
+    margin: 0 0 12px;
+  }
+
+  /* Core competencies */
+  .competency-list{
+    list-style:none;
+    margin:0; padding:0;
+    display:grid;
+    gap: 12px;
+  }
+  .competency-list li{
+    font-size: 15px;
+    padding-left: 18px;
+    position: relative;
+    color: var(--ink);
+  }
+  .competency-list li::before{
+    content:"";
+    position:absolute;
+    left:0; top:9px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background: var(--accent);
+  }
+  .competency-list b{ font-weight: 600; }
+
+  /* Experience */
+  .job{
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 44px;
+  }
+  .job:last-child{
+    border-bottom:none;
+    margin-bottom:0;
+    padding-bottom:0;
+  }
+  .job-head{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-bottom: 2px;
+  }
+  .job-head h3{
+    font-size: 19px;
+    margin:0;
+    font-weight: 700;
+  }
+  .job-head .period{
+    font-size: 13px;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .job-role{
+    font-size: 14px;
+    color: var(--sub);
+    margin: 0 0 4px;
+    font-weight: 500;
+  }
+  .job-scope{
+    font-size: 13.5px;
+    color: var(--faint);
+    margin: 0 0 22px;
+  }
+
+  .project{
+    margin-bottom: 26px;
+  }
+  .project:last-child{ margin-bottom:0; }
+  .project h4{
+    font-size: 15.5px;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  .project dl{
+    margin:0;
+    display:grid;
+    grid-template-columns: 44px 1fr;
+    gap: 6px 10px;
+    font-size: 14.5px;
+  }
+  .project dt{
+    color: var(--faint);
+    font-weight: 600;
+  }
+  .project dd{
+    margin:0;
+    color: var(--ink);
+  }
+  .project dd.result{
+    color: var(--good);
+    font-weight: 500;
+  }
+  .project .note{
+    margin-top: 6px;
+    font-size: 13.5px;
+    color: var(--faint);
+    grid-column: 1 / -1;
+  }
+  .project .links{
+    grid-column: 1 / -1;
+    margin-top: 4px;
+    display:flex;
+    gap: 14px;
+  }
+  .project .links a{
+    font-size: 13.5px;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .project .links a:hover{ text-decoration: underline; }
+
+  .job-highlights{
+    margin: 18px 0 0;
+    padding: 18px 20px;
+    background: var(--tag-bg);
+    border-radius: 12px;
+  }
+  .job-highlights h4{
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  .job-highlights ul{
+    margin:0; padding:0 0 0 18px;
+    font-size: 14px;
+  }
+  .job-highlights li{ margin-bottom: 4px; }
+  .job-highlights li:last-child{ margin-bottom:0; }
+
+  /* Education */
+  .edu-item{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .edu-item:last-child{ border-bottom: none; }
+  .edu-item .name{ font-weight: 600; font-size: 15px; }
+  .edu-item .major{ font-size: 13.5px; color: var(--sub); }
+  .edu-item .period{ font-size: 13px; color: var(--faint); white-space: nowrap; }
+
+  footer{
+    margin-top: 80px;
+    font-size: 12.5px;
+    color: var(--faint);
+    text-align: center;
+  }
+
+  @media (max-width: 560px){
+    .wrap{ padding: 64px 20px 90px; }
+    header.hero h1{ font-size: 32px; }
+    .project dl{ grid-template-columns: 1fr; gap: 2px 0; }
+    .project dt{ margin-top: 8px; }
+    .project dt:first-child{ margin-top:0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <h1>MOONJOO Kim</h1>
+    <p class="role">Product Designer</p>
+    <div class="contact-row">
+      <a href="mailto:kimmunjoo@gmail.com">kimmunjoo@gmail.com</a>
+      <span>·</span>
+      <a href="https://github.com/Kimmmj" target="_blank" rel="noopener">GitHub</a>
+      <span>·</span>
+      <a href="https://www.linkedin.com/in/moonjoo/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </header>
+
+  <section class="summary">
+    <h2>Summary</h2>
+    <p>17년차 디자이너. 에이전시·게임·스타트업을 거치며 그래픽·UI부터 프로덕트 디자인까지 경험했습니다.</p>
+    <p>현재는 실험과 측정을 통해 전환율·재방문율 등 비즈니스 지표를 직접 움직이는 디자인에 집중하고 있습니다.</p>
+    <p>5~8명 팀 리드 경험과 개발 이해를 바탕으로 기획·개발·분석 직군과의 협업에 강점이 있습니다.</p>
+  </section>
+
+  <section class="competencies">
+    <h2>핵심 역량</h2>
+    <ul class="competency-list">
+      <li><b>데이터 기반 의사결정</b> — 퍼널 분석으로 이탈 원인을 찾고 A/B 실험으로 검증하는 사이클을 반복</li>
+      <li><b>그래픽부터 프로덕트까지</b> — 임베디드 UI·게임·서비스 앱을 거쳐 데이터 기반 프로덕트 디자인으로 성장</li>
+      <li><b>디자인 시스템 구축</b> — 개발팀과 협업하여 컴포넌트 설계부터 코드 연결까지 (Figma Code Connect, Storybook)</li>
+      <li><b>프로토타이핑 기반 사전 검증</b> — 개발 전 빠른 검증으로 리스크 최소화</li>
+      <li><b>개발 협업 및 자동화</b> — Figma Code Connect, UX 라이팅 피그마 플러그인 구현, 프레이머 코드 오버라이드로 이벤트 페이지 구현</li>
+    </ul>
+  </section>
+
+  <section class="experience">
+    <h2>Work Experience</h2>
+
+    <!-- 인프랩 -->
+    <div class="job">
+      <div class="job-head">
+        <h3>인프랩</h3>
+        <span class="period">2022. 3 — 재직 중</span>
+      </div>
+      <p class="job-role">Product Design</p>
+      <p class="job-scope">인프런 / 메인페이지 검색과 탐색 개선</p>
+
+      <div class="project">
+        <h4>강의 호버 최적화</h4>
+        <dl>
+          <dt>문제</dt><dd>호버 정보 부족으로 즉시 이탈 55.72%</dd>
+          <dt>해결</dt><dd>콘텐츠 가치 중심 정보 재구성 (배울 것, 시간, 업데이트 날짜 추가)</dd>
+          <dt>결과</dt><dd class="result">즉시 이탈 37.13%로 감소 (-18.59%p, 33% 개선)</dd>
+        </dl>
+        <div class="project links" style="margin-top:8px;">
+          <a href="https://www.figma.com/slides/seaZpt0nLa6suPo0Ogg3FF/Design-Portfolio?node-id=40002160-152&amp;t=j15bcrjCwISYAmmV-4" target="_blank" rel="noopener">상세 케이스 스터디 보기 →</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h4>신규 회원 유료 강의 전환율 개선</h4>
+        <dl>
+          <dt>문제</dt><dd>신규 가입자의 80%가 7일 내 유료 전환 미발생, 미탐색 비율 55.6%</dd>
+          <dt>해결</dt><dd>온보딩 모달로 방문 목적·관심 분야 수집 → 맞춤 강의 추천, A/B 테스트로 완료율 최적화, 대화형 AI 추천 기능 설계·배포</dd>
+          <dt>결과</dt><dd class="result">온보딩 완료율 29.7% → 60.9%, 완료자 장바구니 전환율 34.7% (미완료자 대비 2.1배), 미탐색 비율 23.7%로 감소</dd>
+        </dl>
+        <div class="project links" style="margin-top:8px;">
+          <a href="https://www.figma.com/slides/seaZpt0nLa6suPo0Ogg3FF/Design-Portfolio?node-id=40002001-107&amp;t=j15bcrjCwISYAmmV-4" target="_blank" rel="noopener">상세 케이스 스터디 보기 →</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h4>검색결과 페이지 설계</h4>
+        <dl>
+          <dt>문제</dt><dd>검색 결과 페이지 부재로 검색 경험 단절</dd>
+          <dt>해결</dt><dd>검색 결과 전용 페이지 설계, 필터/정렬 기능 통합</dd>
+          <dt>결과</dt><dd class="result">검색→구매 전환율 4.75% 개선, 구매 전환 효율 향상</dd>
+        </dl>
+      </div>
+
+      <div class="project">
+        <h4>베스트 리뷰 노출</h4>
+        <dl>
+          <dt>문제</dt><dd>유용한 리뷰 찾기 어려움 / 구매 결정 정보 부족</dd>
+          <dt>해결</dt><dd>베스트 리뷰 선별 알고리즘 개발 / 상단 노출 UI 개선</dd>
+          <dt>결과</dt><dd class="result">베스트 리뷰 노출 사용자 23.8% / 구매 전환율 평균 10.6% 개선 / 2.25배 많이 구매</dd>
+        </dl>
+      </div>
+
+      <div class="project">
+        <h4>강의 만들기 에디터 개선</h4>
+        <dl>
+          <dt>문제</dt><dd>강사 제작 도구 사용성 낮음, MD가 직접 제작해야 해서 확장성 제한, 운영 리소스 과다</dd>
+          <dt>해결</dt><dd>에디터 UI/UX 개선, 단축키·템플릿 기능 추가, 사용자가 직접 만들 수 있는 로드맵 에디터 설계 및 개발</dd>
+          <dt>결과</dt><dd class="result">강의 제작 시간 62h → 43h (30% 단축), MD 운영 리소스 절감</dd>
+          <dd class="note">회고: 자유도 확대로 콘텐츠 품질 편차 발생 → 템플릿 가이드 및 품질 기준 추가 개선</dd>
+        </dl>
+      </div>
+
+      <div class="project">
+        <h4>연말결산 리포트 이벤트 랜딩 페이지</h4>
+        <dl>
+          <dt>문제</dt><dd>이벤트 페이지 제작 개발 리소스 부족</dd>
+          <dt>해결</dt><dd>생성형 AI 기반 캐릭터·컨셉 아트 제작과 Framer 코드 오버라이드로 개발 리소스 제약 해소, 설계부터 배포까지 Time to Market 단축</dd>
+          <dt>결과</dt><dd class="result">개발 의존 없이 이벤트 페이지 자체 런칭, AI 활용 워크플로우 확립</dd>
+        </dl>
+      </div>
+
+      <div class="job-highlights">
+        <h4>디자인 시스템 구축 (Mantine v6 + Bootstrap 하이브리드)</h4>
+        <ul>
+          <li>Figma Code Connect 도입으로 디자인-개발 핸드오프 및 UI 구현 시간 95% 단축</li>
+          <li>색상 준수율 55% → 95%, 스페이싱 일관성 30% → 70% 개선</li>
+          <li>UX 라이팅 플러그인 개발로 문서 탐색 시간 90% 감소</li>
+          <li>인프콘 발표를 통해 오픈소스 기반 구축 경험 외부 공유</li>
+        </ul>
+        <div class="project links" style="margin-top:12px;">
+          <a href="https://www.figma.com/slides/seaZpt0nLa6suPo0Ogg3FF/Design-Portfolio?node-id=40002006-132&amp;t=j15bcrjCwISYAmmV-4" target="_blank" rel="noopener">상세 케이스 스터디 보기 →</a>
+          <a href="https://youtu.be/_imkaaad6_s?si=HRpTucDT2XkAuAU1" target="_blank" rel="noopener">인프콘 발표 →</a>
+          <a href="https://story.inflab.com/%EC%9D%B8%ED%94%84%EB%9F%B0-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95%EA%B8%B0/" target="_blank" rel="noopener">디자인 시스템 구축기 (인터뷰) →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tripbtoz -->
+    <div class="job">
+      <div class="job-head">
+        <h3>Tripbtoz</h3>
+        <span class="period">2020. 4 — 2022. 2</span>
+      </div>
+      <p class="job-role">Product Design</p>
+      <p class="job-scope">TripBtoz / App &amp; Web 서비스 고도화 및 운영</p>
+
+      <div class="project">
+        <h4>결제 플로우 개선</h4>
+        <dl>
+          <dt>문제</dt><dd>네이버·호텔스컴바인 랜딩 후 결제까지 정보 불일치·오류로 이탈 발생</dd>
+          <dt>해결</dt><dd>상세페이지 → 결제 → 예약확인 전 구간 플로우 지속 개선</dd>
+          <dt>결과</dt><dd class="result">결제·리뷰·공유 전 구간 플로우 최적화로 이탈 요소 제거, 결제 검증 절차 일관성 확보를 통한 예약 완료율 개선 (팬데믹 극복을 위한 결제 시나리오 전면 개선 주도)</dd>
+        </dl>
+      </div>
+
+      <div class="project">
+        <h4>리뷰하기 및 영상·상품 공유하기 기능 개선</h4>
+        <dl>
+          <dt>문제</dt><dd>체크아웃 이후 앱 이탈률 높음, 리텐션 저조</dd>
+          <dt>해결</dt><dd>영상 리뷰 작성 시 보상 제공, 공유를 통한 예약 시 추가 보상 기능 도입</dd>
+          <dt>결과</dt><dd class="result">앱 삭제율 감소 및 리텐션 개선 목표 달성</dd>
+        </dl>
+      </div>
+
+      <div class="project">
+        <h4>반응형 웹으로 개선하기</h4>
+        <dl>
+          <dt>문제</dt><dd>고정 레이아웃으로 모바일·태블릿 사용성 저하</dd>
+          <dt>해결</dt><dd>PC·태블릿·모바일 대응 반응형 웹으로 전면 개편</dd>
+        </dl>
+      </div>
+
+      <div class="job-highlights">
+        <h4>디자인 시스템 구축</h4>
+        <ul>
+          <li>컴포넌트화 및 스타일 규칙 정리로 디자인·관리 효율 향상</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Double 8 Games -->
+    <div class="job">
+      <div class="job-head">
+        <h3>Double 8 Games <span style="font-weight:400; color:var(--sub); font-size:14px;">(DoubleU Games 자회사)</span></h3>
+        <span class="period">2015. 11 — 2020. 3</span>
+      </div>
+      <p class="job-role">UI / Graphic Design Lead</p>
+      <p class="job-scope">게임 앱 3종 런칭 총괄 / 5~8명 팀 리드 / Unity 기반 그래픽·UI 전 과정 담당</p>
+    </div>
+
+    <!-- Brinicle / Incross / MotiveFlux -->
+    <div class="job">
+      <div class="job-head">
+        <h3>Brinicle / Incross / MotiveFlux</h3>
+        <span class="period">2008. 9 — 2015. 3</span>
+      </div>
+      <p class="job-role">UI / Graphic Design</p>
+      <p class="job-scope">모바일·웹 앱 UI 디자인 및 피처폰 임베디드 UI 등 다수 클라이언트 프로젝트 수행 (2015년 이전 상세 경력 생략)</p>
+    </div>
+
+  </section>
+
+  <section class="education">
+    <h2>Education</h2>
+    <div class="edu-item">
+      <div>
+        <div class="name">남서울대학교</div>
+        <div class="major">Visual Information Design</div>
+      </div>
+      <span class="period">2001. 3 — 2009. 2</span>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="name">English Language Company</div>
+        <div class="major">어학연수</div>
+      </div>
+      <span class="period">2007. 10 — 2008. 8</span>
+    </div>
+  </section>
+
+  <footer>
+    Last updated 2026. 7 &nbsp;·&nbsp; MOONJOO Kim
+  </footer>
+
+</div>
+
+</body>
+</html>
